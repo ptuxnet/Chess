@@ -1,0 +1,7 @@
+bool isGreen(int index) {
+  int x = index % 8;
+  int y = index ~/ 8;
+  bool isGreen = (x + y) % 2 == 0;
+
+  return isGreen;
+}
