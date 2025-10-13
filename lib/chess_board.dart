@@ -13,6 +13,10 @@ class ChessBoard extends StatefulWidget {
 class _ChessBoardState extends State<ChessBoard> {
   late List<List<ChessPiece?>> board;
 
+  ChessPiece? selectedPiece;
+  int selectedRow = -1;
+  int selectedCol = -1;
+
   @override
   void initState() {
     super.initState();
@@ -132,6 +136,16 @@ class _ChessBoardState extends State<ChessBoard> {
     board = newBoard;
   }
 
+  void pieceSelected(int row, int col) {
+    setState(() {
+      if (board[row][col] != null) {
+        selectedPiece = board[row][col];
+        selectedRow = row;
+        selectedCol = col;
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -144,7 +158,14 @@ class _ChessBoardState extends State<ChessBoard> {
         itemBuilder: (context, index) {
           int row = index ~/ 8;
           int col = index % 8;
-          return SquareBox(isWhite: isWhite(index), piece: board[row][col]);
+
+          bool isSelected = (selectedRow == row && selectedCol == col);
+          return SquareBox(
+            onTap: () => pieceSelected(row, col),
+            isWhite: isWhite(index),
+            piece: board[row][col],
+            isSelected: isSelected,
+          );
         },
       ),
     );
