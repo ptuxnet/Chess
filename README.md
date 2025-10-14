@@ -1,4 +1,4 @@
- # ♟️ Flutter Chess App
+# ♟️ Flutter Chess App
 
 A modern and interactive chess application built with **Flutter**.  
 Play classic chess on a beautifully designed board with smooth animations, rule validation, and customizable themes.
@@ -22,7 +22,6 @@ Play classic chess on a beautifully designed board with smooth animations, rule 
 - **UI:** Material Design, Custom Widgets  
 - **Logic:** Custom chess engine for move legality and checkmate detection  
 
- 
 ---
 
 ## 💡How It Works
@@ -41,5 +40,3 @@ Play classic chess on a beautifully designed board with smooth animations, rule 
 - 🕹️ Animated piece movement  
 
 ---
- 
- 
