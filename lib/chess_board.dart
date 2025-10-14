@@ -39,7 +39,7 @@ class _ChessBoardState extends State<ChessBoard> {
       newBoard[6][i] = ChessPiece(
         type: PiecesType.pawn,
         isWhite: true,
-        imagePath: 'assets/pawn.png',
+        imagePath: 'assets/white_pawn.png',
       );
     }
 
@@ -57,12 +57,12 @@ class _ChessBoardState extends State<ChessBoard> {
     newBoard[7][0] = ChessPiece(
       type: PiecesType.rook,
       isWhite: true,
-      imagePath: 'assets/rook.png',
+      imagePath: 'assets/white_rook.png',
     );
     newBoard[7][7] = ChessPiece(
       type: PiecesType.rook,
       isWhite: true,
-      imagePath: 'assets/rook.png',
+      imagePath: 'assets/white_rook.png',
     );
 
     // knights
@@ -79,12 +79,12 @@ class _ChessBoardState extends State<ChessBoard> {
     newBoard[7][1] = ChessPiece(
       type: PiecesType.knight,
       isWhite: true,
-      imagePath: 'assets/knight.png',
+      imagePath: 'assets/white_knight.png',
     );
     newBoard[7][6] = ChessPiece(
       type: PiecesType.knight,
       isWhite: true,
-      imagePath: 'assets/knight.png',
+      imagePath: 'assets/white_knight.png',
     );
 
     // bishops
@@ -101,12 +101,12 @@ class _ChessBoardState extends State<ChessBoard> {
     newBoard[7][2] = ChessPiece(
       type: PiecesType.bishop,
       isWhite: true,
-      imagePath: 'assets/bishop.png',
+      imagePath: 'assets/white_bishop.png',
     );
     newBoard[7][5] = ChessPiece(
       type: PiecesType.bishop,
       isWhite: true,
-      imagePath: 'assets/bishop.png',
+      imagePath: 'assets/white_bishop.png',
     );
 
     // queens
@@ -118,7 +118,7 @@ class _ChessBoardState extends State<ChessBoard> {
     newBoard[7][3] = ChessPiece(
       type: PiecesType.queen,
       isWhite: true,
-      imagePath: 'assets/queen.png',
+      imagePath: 'assets/white_queen.png',
     );
 
     // kings
@@ -130,13 +130,14 @@ class _ChessBoardState extends State<ChessBoard> {
     newBoard[7][4] = ChessPiece(
       type: PiecesType.king,
       isWhite: true,
-      imagePath: 'assets/king.png',
+      imagePath: 'assets/white_king.png',
     );
 
     board = newBoard;
   }
 
   void pieceSelected(int row, int col) {
+    // print('Piece selected at row: $row, col: $col');
     setState(() {
       if (board[row][col] != null) {
         selectedPiece = board[row][col];
@@ -150,6 +151,7 @@ class _ChessBoardState extends State<ChessBoard> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: GridView.builder(
+        // stop the scrolling of the board
         physics: NeverScrollableScrollPhysics(),
         itemCount: 64,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(

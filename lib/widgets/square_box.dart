@@ -20,24 +20,16 @@ class SquareBox extends StatelessWidget {
     Color? squareBoxColor;
 
     if (isSelected) {
-      squareBoxColor = Colors.green[400];
+      squareBoxColor = Colors.lime.shade500;
     } else {
-      squareBoxColor = isWhite ? Colors.indigo[100] : Colors.indigo[500];
+      squareBoxColor = isWhite ? Color(0xffE9EDCC) : Color(0xff779954);
     }
 
     return GestureDetector(
       onTap: onTap,
       child: Container(
         color: squareBoxColor,
-        child: piece != null
-            ? FittedBox(
-                fit: BoxFit.contain,
-                child: Image.asset(
-                  piece!.imagePath,
-                  color: piece!.isWhite ? Colors.white : Colors.black,
-                ),
-              )
-            : null,
+        child: piece != null ? Image.asset(piece!.imagePath) : null,
       ),
     );
   }
