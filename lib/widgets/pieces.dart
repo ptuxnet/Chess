@@ -2,12 +2,12 @@ enum PiecesType { pawn, rook, knight, bishop, queen, king }
 
 class ChessPiece {
   final PiecesType type;
-  final bool isWhite;
+  final bool isWhitePieces;
   final String imagePath;
 
   ChessPiece({
     required this.type,
-    required this.isWhite,
+    required this.isWhitePieces,
     required this.imagePath,
   });
 }

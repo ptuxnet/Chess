@@ -2,14 +2,14 @@ import 'package:chess/widgets/pieces.dart';
 import 'package:flutter/material.dart';
 
 class SquareBox extends StatelessWidget {
-  final bool isWhite;
+  final bool isLightColor;
   final bool isSelected;
   final ChessPiece? piece;
   final void Function()? onTap;
 
   const SquareBox({
     super.key,
-    required this.isWhite,
+    required this.isLightColor,
     required this.piece,
     required this.isSelected,
     required this.onTap,
@@ -22,7 +22,7 @@ class SquareBox extends StatelessWidget {
     if (isSelected) {
       squareBoxColor = Colors.lime.shade500;
     } else {
-      squareBoxColor = isWhite ? Color(0xffE9EDCC) : Color(0xff779954);
+      squareBoxColor = isLightColor ? Color(0xffE9EDCC) : Color(0xff779954);
     }
 
     return GestureDetector(
