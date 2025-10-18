@@ -1,4 +1,4 @@
-import 'package:chess/widgets/pieces.dart';
+import 'package:chess/models/pieces.dart';
 import 'package:flutter/material.dart';
 
 class SquareBox extends StatelessWidget {
